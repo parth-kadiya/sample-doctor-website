@@ -1,0 +1,475 @@
+/* ================================
+   MASTER MEDIA QUERIES FOR RESPONSIVE DESIGN
+   Devices: Mobile, Tablet, Laptop, Desktop, Large Desktop
+   Paste this at the end of your 44.css file
+   ================================ */
+
+/* --------------------------------
+   1. Mobile (max-width: 480px)
+   -------------------------------- */
+@media (max-width: 768px) {
+  body {
+  background: url('images/bg_m.png') no-repeat center center fixed !important;
+  background-size: cover !important;
+}
+
+  
+  /* Navbar */
+  .nav-container {
+    padding: 0 10px;
+  }
+  .logo {
+    font-size: 1.2rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .nav-links li a {
+    font-size: 0.9rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 40px 10px;
+  }
+  .card {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .hero-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+  .hero-img img {
+  width: 100%;
+  max-width: 180px; /* Adjust for safe fitting */
+  height: auto;
+}
+
+.hero-info {
+  width: 100%;
+  text-align: center;
+}
+
+
+  .hero-info h1 {
+    font-size: 2rem;
+  }
+  .hero-info h3 {
+    font-size: 1.2rem;
+  }
+  .hospital {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .description {
+  word-wrap: break-word;
+  max-width: 100%;
+  text-align: justify;
+  font-size: 0.9rem;
+}
+
+ .badges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center; /* ✅ center all span elements horizontally */
+}
+
+.btn {
+  min-width: auto;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+ .badges span {
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  width: 80%;         /* ✅ set exact width */
+  box-sizing: border-box;
+  text-align: center; /* ✅ optional, text center */
+}
+
+ .badge-btn-group .btn {
+    min-width: auto;
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .badge-btn-group {
+  width: 100%;
+}
+
+
+  /* About Section */
+  .about-card {
+    padding: 30px 15px;
+  }
+  .about-text h2 {
+    font-size: 1.5rem;
+  }
+  .about-text p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  /* Services Section */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .service-box {
+    padding: 20px;
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .testimonial-box {
+    padding: 20px;
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+  .testimonial-box h4 {
+    font-size: 0.85rem;
+  }
+
+  /* Appointment Form */
+  form#appointmentForm {
+    padding: 20px;
+    max-width: 100%;
+  }
+  form#appointmentForm input,
+  form#appointmentForm select,
+  form#appointmentForm textarea {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  form#appointmentForm button.btn {
+    font-size: 0.9rem;
+    padding: 12px 0;
+  }
+
+  /* Footer */
+
+  .footer {
+  padding-bottom: 100px; /* ✅ add this if not already present */
+}
+  .footer-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-column {
+    min-width: 100%;
+  }
+  .footer-column h3 {
+    font-size: 1.2rem;
+  }
+  .footer-column p,
+  .footer-column a {
+    font-size: 0.9rem;
+  }
+  .location-btn {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  .footer-bottom {
+     font-size: 12px;
+  }
+}
+
+/* --------------------------------
+   2. Tablet (min-width: 481px and max-width: 768px)
+   -------------------------------- */
+
+
+/* --------------------------------
+   3. Laptop (min-width: 769px and max-width: 1024px)
+   -------------------------------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .bottom-nav {
+  display: none;
+}
+
+  /* Navbar */
+  .nav-links {
+    gap: 20px;
+  }
+  .logo {
+    font-size: 1.4rem;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 60px 20px;
+  }
+  .card {
+    padding: 35px;
+    gap: 35px;
+  }
+  .hero-img img {
+    width: 280px;
+  }
+  .hero-info h1 {
+    font-size: 2.5rem;
+  }
+  .hero-info h3 {
+    font-size: 1.5rem;
+  }
+  .description {
+    font-size: 1.02rem;
+  }
+  .badges span {
+    font-size: 1rem;
+  }
+  .badge-btn-group .btn {
+    min-width: auto;
+    width: auto;
+  }
+
+  /* About Section */
+  .about-text h2 {
+    font-size: 1.9rem;
+  }
+  .about-text p {
+    font-size: 1.05rem;
+  }
+
+  /* Services Section */
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .testimonial-box {
+    max-width: 300px;
+  }
+
+  /* Appointment Form */
+  form#appointmentForm {
+    max-width: 80%;
+  }
+
+  /* Footer */
+  .footer-container {
+    gap: 25px;
+  }
+  .footer-column {
+    min-width: 30%;
+  }
+}
+
+/* --------------------------------
+   4. Desktop (min-width: 1025px and max-width: 1440px)
+   -------------------------------- */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .bottom-nav {
+  display: none;
+}
+
+  /* Navbar */
+  .nav-links {
+    gap: 25px;
+  }
+  .logo {
+    font-size: 1.5rem;
+  }
+  .nav-links li a {
+    font-size: 1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 60px 20px;
+  }
+  .hero-img img {
+    width: 300px;
+  }
+  .hero-info h1 {
+    font-size: 2.8rem;
+  }
+  .hero-info h3 {
+    font-size: 1.6rem;
+  }
+  .description {
+    font-size: 1.05rem;
+  }
+
+  /* Services Section */
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Appointment Form */
+  form#appointmentForm {
+    max-width: 700px;
+  }
+
+  /* Footer */
+  .footer-column {
+    min-width: 25%;
+  }
+}
+
+/* --------------------------------
+   5. Large Desktop (min-width: 1441px)
+   -------------------------------- */
+@media (min-width: 1441px) {
+    .bottom-nav {
+  display: none;
+}
+
+  /* Navbar */
+  .nav-links {
+    gap: 30px;
+  }
+  .logo {
+    font-size: 1.6rem;
+  }
+  .nav-links li a {
+    font-size: 1.05rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 60px 20px;
+  }
+  .hero-img img {
+    width: 320px;
+  }
+  .hero-info h1 {
+    font-size: 3rem;
+  }
+  .hero-info h3 {
+    font-size: 1.7rem;
+  }
+  .description {
+    font-size: 1.1rem;
+  }
+
+  /* Services Section */
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Testimonials */
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .testimonial-box {
+    max-width: 300px;
+  }
+
+  /* Appointment Form */
+  form#appointmentForm {
+    max-width: 700px;
+  }
+
+  /* Footer */
+  .footer-column {
+    min-width: 22%;
+  }
+}
+
+@media (max-width: 768px) {
+
+     .navbar {
+    display: none;
+  }
+
+.bottom-nav {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+
+  /* Solid background color instead of transparent */
+  background: 	#5a5a5a; /* Change this to your preferred solid color (e.g., #ffffff for white) */
+  backdrop-filter: none; /* Remove blur effect since it's not needed for solid bg */
+
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 20px 20px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+
+
+  .bottom-nav .nav-item {
+    flex: 1 !important;                      /* 5 items honge, 100% / 5 = 20% each */
+    display: flex;
+    flex-direction: column;       /* icon upar, text niche */
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 0.75rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 20% !important; /* Optional: if you prefer explicit control */
+      box-sizing: border-box !important;
+  }
+
+
+  /* Icon ke liye styling (rounded background jab active ho) */
+ .bottom-nav .nav-item i {
+  font-size: 1.2rem;
+  padding: 10px 20px;          /* Top-bottom: 8px, Left-right: 14px (zyada width) */
+  border-radius: 16px;        /* Thoda zyada rounded for pill shape */
+  transition: background 0.3s ease;
+}
+
+
+  /* Agar koi nav‐item active ho, uske icon ke peeche gradient background (footer ke gradient jaisa) */
+  .bottom-nav .nav-item.active i {
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    color: #fff;
+  }
+
+.bottom-nav .nav-item span {
+  margin-top: 2px;
+}
+
+html, body {
+  overflow-x: hidden;  /* horizontal scroll na aaye */
+  min-height: 100%;    /* ensure page minimum height viewport ke barabar ho */
+}
+
+}
+
+@media (max-width: 768px) {
+  section, .card, .container, .testimonial-box, .service-box {
+    touch-action: manipulation;
+  }
+
+  body, html {
+    overflow-y: auto !important;
+  }
+}

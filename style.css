@@ -1,0 +1,803 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* -------------- */
+/* Always hide bottom‐nav by default (desktop and larger screens) */
+/* -------------- */
+
+
+.bottom-nav {
+  display: none;
+}
+
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url('images/bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #f8f9fa;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7); /* Adjust darkness here */
+  z-index: -1;
+}
+
+a {
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: 	#5a5a5a; /* same as .card */
+  backdrop-filter: blur(12px); /* match card blur */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4); /* same as .card */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* subtle border */
+  z-index: 1000;
+  padding: 15px 0;
+   border-radius: 0 0 20px 20px;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #00c6ff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #f8f9fa;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #00c6ff;
+}
+
+.nav-links li a.active {
+  color: #00c6ff;
+  position: relative;
+  font-weight: 600;
+}
+
+.nav-links li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border-radius: 2px;
+  animation: underlineSlide 0.3s ease forwards;
+}
+
+.nav-links li a i {
+  margin-right: 8px;
+  color: inherit; /* inherit from parent <a> */
+}
+
+/* Active link icon color blue */
+.nav-links li a.active i {
+  color: #00c6ff;
+}
+
+
+@keyframes underlineSlide {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 0;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  z-index: 1;
+}
+
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(12px);
+  padding: 40px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  gap: 40px;
+  position: relative;
+  z-index: 2; /* ensures it's above the overlay */
+}
+
+.hero-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.glow-border {
+  border-radius: 30px;
+  padding: 8px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  animation: borderPulse 3s infinite ease-in-out;
+}
+
+.hero-img img {
+  width: 300px;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes borderPulse {
+  0%, 100% { filter: drop-shadow(0 0 8px #00c6ff); }
+  50% { filter: drop-shadow(0 0 16px #0072ff); }
+}
+
+.hero-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-info h1 {
+  font-size: 2.8rem;
+  color: #00c6ff;
+}
+
+.hero-info h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.hospital {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-size: 1.05rem;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.badges span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px 15px;
+  border-radius: 25px;
+}
+
+.btn {
+  background-color: #0072ff;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  width: fit-content;
+  min-width: 420px; /* Adjust this based on badge width */
+  text-align: center;
+}
+
+
+.btn:hover {
+  background-color: #005acc;
+  transform: translateY(-2px);
+}
+
+.badge-btn-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+}
+
+.badges, .btn {
+  width: 100%;
+}
+
+/* 1) Hero सेक्शन में Book Appointment बटन को gradient फ़ोन्ट दें */
+.badge-btn-group .btn {
+  /* पूरी तरह से वही gradient जो form के बटन में है */
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: #fff;               /* टेक्स्ट सफेद */
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* 2) Hover पर हल्का उठान और shadow */
+.badge-btn-group .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.3);
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+/* 3) अगर आप बटन की width control करना चाहें */
+.badge-btn-group .btn {
+  min-width: 200px; /* या जितनी चाहिए */
+  text-align: center;
+}
+
+
+.about-card {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+  animation: fadeInCard 1s ease-in-out;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: #00c6ff;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #f1f1f1;
+  line-height: 1.7;
+  text-align: justify !important;
+}
+
+
+@keyframes fadeInCard {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* remove your existing scroll-margin-top / padding-top in the #… rules */
+
+section {
+  /* this replaces all the individual id‐based settings */
+  scroll-margin-top: 80px;    /* roughly equals navbar height + a bit of breathing room */
+  padding-top: 0;             /* you can now collapse your extra padding-top */
+  padding-bottom: 60px;       /* feel free to keep bottom padding as you like */
+}
+
+ #about {
+   scroll-margin-top: 170px !important;
+   padding-top: 50px !important;
+ }
+
+
+ /* ——— CUSTOM SELECT WRAPPER ——— */
+.custom-select {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* ——— ACTUAL SELECT ——— */
+.custom-select select {
+  width: 100%;
+  padding: 15px 50px 15px 20px;   /* left padding for text, right padding for icon */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #f8f9fa;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  border: 1px solid #00c6ff;
+  border-radius: 12px;
+  appearance: none;               /* hide native arrow */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+/* focus में बॉर्डर को और झिलमिल बनाएं */
+.custom-select select:focus {
+  box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.5);
+}
+
+/* ——— ICON POSITIONING ——— */
+.custom-select .select-icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  pointer-events: none;           /* click-through so select खोल सके */
+}
+
+/* ——— OPTION STYLES (Chrome/Edge में लागू) ——— */
+.custom-select select option {
+  background: rgba(0, 0, 0, 0.6);
+  color: #f8f9fa;
+  padding: 10px;
+}
+
+/* hover/selected इफ़ेक्ट */
+.custom-select select option:hover,
+.custom-select select option:checked {
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+/* ——— सुनिश्चित करें कि select पूरे फ़ॉर्म की चौड़ाई ले ——— */
+.custom-select {
+  width: 100%;            /* wrapper अब full width */
+  margin: 0;              /* auto-margin हटाई */
+}
+
+/* अभी select भी 100% रहना चाहिए */
+.custom-select select {
+  width: 100%;
+}
+
+/* ——— dropdown-arrow icon को ठीक जगह पर रखें ——— */
+.custom-select .select-icon {
+  position: absolute;
+  top: 50%;
+  right: 16px;            /* जितनी padding-right है उतनी जगह पर आइकन */
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ——— (वैकल्पिक):hover में थोड़ा हीलाइट ——— */
+.custom-select select:hover {
+  border-color: #0072ff;
+}
+
+
+ 
+section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #00c6ff;
+}
+
+.about p, .appointment p {
+  text-align: center;
+  max-width: 800px;
+  margin: auto;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  margin-top: 30px;
+  justify-items: center;
+}
+
+/* 1. FIXED CARD SIZE */
+.service-box {
+  width: 280px;            /* same width for all */
+  height: 340px;           /* enough room for image + text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* pushes title to bottom */
+  padding: 20px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,198,255,0.1);
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* 2. SQUARE IMAGE CONTAINER */
+.service-img {
+  width: 100%;
+  padding-top: 100%;      /* 1:1 aspect ratio */
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;    /* optional, to round the square */
+}
+
+/* 3. INSIDE THAT CONTAINER, SCALE YOUR IMG */
+.service-img img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;    /* ensures the whole square image is visible */
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* 4. SERVICE TITLE */
+.service-box h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+}
+
+/* 5. HOVER EFFECTS */
+.service-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 30px rgba(0,198,255,0.3);
+}
+.service-box:hover .service-img img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 8px #00c6ff);
+}
+
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-top: 30px;
+  justify-items: center;         /* ← ADD THIS */
+}
+
+.testimonial-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 198, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* FIXED UNIFORM WIDTH */
+  width: 100%;                   /* full width of its column */
+  max-width: 800px;              /* your desired fixed width */
+  margin: 0 auto;                /* center within the grid */
+}
+
+
+.testimonial-box:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: rgba(0, 198, 255, 0.12);
+  box-shadow: 0 8px 30px rgba(0, 198, 255, 0.3);
+  border: 1px solid rgba(0, 198, 255, 0.4);
+  cursor: pointer;
+}
+
+.testimonial-box h4 {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #00c6ff;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 600px;
+  margin: auto;
+}
+
+input, textarea, select {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+/* Appointment Form Styles */
+form#appointmentForm {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 198, 255, 0.15);
+  max-width: 700px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeInForm 1s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Form Fields */
+form#appointmentForm input,
+form#appointmentForm select,
+form#appointmentForm textarea {
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.05);
+  outline: none;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+form#appointmentForm input::placeholder,
+form#appointmentForm textarea::placeholder {
+  color: #cccccc;
+}
+
+form#appointmentForm input:focus,
+form#appointmentForm select:focus,
+form#appointmentForm textarea:focus {
+  background: rgba(0, 198, 255, 0.1);
+  border: 1px solid #00c6ff;
+  box-shadow: 0 0 0 2px rgba(0, 198, 255, 0.3);
+}
+
+/* Button Style */
+form#appointmentForm button.btn {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  padding: 14px 0;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+form#appointmentForm button.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.3);
+}
+
+select option {
+  color: #000; /* Set font color to black */
+  background: #e6f7ff; /* Optional: better contrast background */
+}
+
+select option:hover {
+  background-color: #00c6ff;
+  color: #fff;
+}
+
+
+
+
+
+/* Animation */
+@keyframes fadeInForm {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.footer {
+  color: white;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+
+  /* ✨ Frosted-glass bg like header */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+
+  /* ✨ Matching shadow */
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+
+  /* ✨ Subtle top border */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+
+  /* ✨ Rounded top corners */
+  border-radius: 20px 20px 0 0;
+
+  /* make sure it sits above other content */
+  position: relative;
+  z-index: 1000;
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+
+.footer-column {
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-column h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.footer-column p,
+.footer-column a {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #f8f9fa;
+}
+
+.footer-column a i,
+.footer-column p i {
+  margin-right: 10px;
+  color: #00c6ff;
+}
+
+/* सिर्फ़ <p> को flex कंटेनर बनाएं */
+.footer-column p {
+  display: flex;           /* flex container */
+  align-items: center;     /* vertical center */
+  margin-bottom: 12px;
+}
+
+/* लिंक को अपनी डिफ़ॉल्ट inline फ्लो में रखें */
+.footer-column p a {
+  display: inline-flex;    /* inline-flex ताकि आइकन+टेक्स्ट साथ रहें */
+  align-items: center;
+  gap: 8px;                /* आइकन और टेक्स्ट के बीच स्पेस */
+  color: #f8f9fa;
+  text-decoration: none;
+}
+
+.footer-column p a i {
+  font-size: 1.2em;        /* जरूरत के हिसाब से एडजस्ट करें */
+  line-height: 1;
+  color: #00c6ff;
+}
+
+/* आइकन ठीक लाइन-हाइट और साइज के साथ */
+.footer-column p i {
+  line-height: 1;         /* आइकन की लाइन-हाइट */
+  font-size: 1.1em;       /* या अपने हिसाब से */
+  color: #00c6ff;
+}
+
+
+.footer-column .social-link a {
+  display: flex;
+  align-items: center;  /* वर्टिकल सेंटर */
+  gap: 8px;             /* आइकॉन और टेक्स्ट के बीच स्पेस */
+  margin-bottom: 12px;  /* हम चाहें तो हर लिंक के बीच स्पेस दे सकते हैं */
+}
+
+.footer-column .social-link a i {
+  display: inline-block;
+  width: 24px;          /* अपनी डिज़ाइन के हिसाब से एडजस्ट करें */
+  text-align: center;   /* आइकॉन सेंटर में रहे */
+}
+
+/* Fix for social media icons alignment */
+.social-link a i {
+  width: 24px; /* Fixed width for consistent alignment */
+  text-align: center; /* Center the icon within its space */
+  margin-right: 8px; /* Space between icon and text */
+}
+
+.social-link a {
+  display: flex;
+  align-items: center;
+  padding-left: 0; /* Remove any default padding */
+}
+
+
+.footer-column a:hover {
+  color: #d9f1ff;
+}
+
+/* Location button - styled like appointment form submit */
+.location-btn {
+  display: inline-flex;           /* inline-block की जगह inline-flex */
+  align-items: center;            /* वर्टिकल सेंट्रलाइज़ेशन */
+  justify-content: center;        /* हॉरिजॉन्टल सेंट्रलाइज़ेशन */
+  padding: 12px 30px;
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  /* अगर आप चाहें तो width भी तय कर सकते हैं, 
+     या फिर इसे कंटेंट के हिसाब से फिट होने दें */
+  /* width: fit-content; */
+}
+
+
+
+.location-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 198, 255, 0.3);
+}
+
+/* Optional icon fix if fas fa-location-dot doesn't load properly */
+.fas.fa-location-dot {
+  color: #fff;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  font-size: 14px;
+}
